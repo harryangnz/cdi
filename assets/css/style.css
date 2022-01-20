@@ -510,9 +510,7 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
-.about .content ol {
-  
-}
+
 .about .content ol li {
   padding: 0 0 8px 15px;
   position: relative;

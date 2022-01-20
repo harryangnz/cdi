@@ -72,7 +72,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#contact_anchor" class="get-started-btn scrollto">Contact us</a>
+      <a href="index.html#contact_anchor" class="get-started-btn scrollto">Contact us</a>
 
     </div>
   </header>
@@ -95,23 +95,142 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-       <!-- ======= About CDI Section ======= -->
-       <section id="about" class="about">
+      <!-- ======= Video Section ======= -->
+      <section id="about" class="about">
         <a class="anchor" id="about_cdi_anchor"></a>
         <div class="container" data-aos="fade-up">
           <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-              <img src="assets/img/hk1.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <div class="col-lg-12" data-aos="fade-left" data-aos-delay="100">
               <p>
-                Set up firewalls so that the CDI network can successfully interact with the bank's internal network 
+                For version: Ubuntu 18.04 LTS
               </p>
+              <video class="video-fluid z-depth-1" autoplay loop controls muted>
+                <source src="assets/videos/deploymentvideo.mp4" type="video/mp4"/>
+                Video load error
+              </video>
             </div>
           </div>
         </div>
       </section>
-      <!-- End About Section -->
+      <!-- End Video Section -->
+
+       <!-- ======= Instructions Section ======= -->
+       <section id="about" class="about">
+        <a class="anchor" id="about_cdi_anchor"></a>
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+
+              <!-- Git Client -->
+              <h4>A. Install Git Client</h4>
+              <ol>
+                <li>sudo apt-get install git</li>
+              </ol>
+
+              <!-- Go -->
+              <h4>B. Install Go (version 1.15.x)</h4>
+              <a href="https://linuxtect.com/how-to-install-go-golang-in-linux/" target="_blank" rel="noopener noreferrer">
+                Installation Instructions
+              </a>
+              <ol style="padding-top: 10px;">
+                <li>$ wget https://go.dev/dl/go1.15.linux-amd64.tar.gz</li>
+                <li>$ sudo tar -C /usr/local/ -xzf go1.15.linux-amd64.tar.gz</li>
+                <li>$vim ~/.profile</li>
+                <li>export PATH=$PATH:/usr/local/go/bin</li>
+                <li>:wq</li>
+                <li>$ source ~/.profile</li>
+                <li>$ go</li>
+                <li>$ go version</li>
+              </ol>
+
+              <!-- Docker -->
+              <h4>C. Install  Docker version 18.03 or later</h4>
+              <a href="https://docs.docker.com/engine/install/ubuntu/#install-docker-engine" target="_blank" rel="noopener noreferrer">
+                Installation Instructions
+              </a>
+              <ol style="padding-top: 10px;">
+                <li>sudo apt-get update</li>
+                <li> sudo apt-get install \<br>
+                  ca-certificates \<br>
+                  curl \<br>
+                  gnupg \<br>
+                  lsb-release</li>
+                <li>y</li>
+                <li>y</li>
+                <li> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</li>
+                <li>echo \
+                  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+                  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null</li>
+                <li>sudo apt-get update</li>
+                <li>sudo apt-get install docker-ce docker-ce-cli containerd.io</li>
+                <li>y</li>
+                <li> sudo docker run hello-world</li>
+              </ol>
+
+              
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+              <!-- SoftHSM -->
+              <h4>D. Install  SoftHSM</h4>
+              <ol style="padding-top: 0px;">
+                <li>git clone https://github.com/opendnssec/SoftHSMv2.git</li>
+                <li>sudo apt-get install openssl</li>
+                <li>sudo apt-get install libssl-dev</li>
+                <li>ls</li>
+                <li>cd SoftHSMv2</li>
+                <li>sudo apt install automake</li>
+                <li>sudo apt install autoconf</li>
+                <li>sudo apt install libtool</li>
+                <li style="color: #981178;;">*sudo apt install libtool-ltdl-devel (RHEL/CentOS)		</li>
+                <li>sudo apt install pkg-config</li>
+                <li>sh autogen.sh</li>
+                <li>./configure</li>
+                <li>make</li>
+                <li>sudo make install</li>
+                <li>cd ..</li>
+              </ol>
+
+              <!-- jq -->
+              <h4>E. Install jq</h4>
+              <ol style="padding-top: 0px;">
+                <li>sudo apt-get install jq</li>
+                <li>y</li>
+                <li>jq--version</li>
+              </ol>
+
+              <!-- cURL -->
+              <h4>F. Install cURL</h4>
+              <ol style="padding-top: 0px;">
+                <li> sudo apt -y install curl</li>
+              </ol>
+
+              <!-- Hyperledger Fabric Source -->
+              <h4>G. Clone the Hyperledger Fabric Source</h4>
+              <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/dev-setup/devenv.html" target="_blank" rel="noopener noreferrer">
+                Installation Instructions
+              </a>
+              <ol style="padding-top: 10px;">
+                <li>git clone https://github.com/hyperledger/fabric</li>
+                <li>softhsm2-util --init-token --slot 0 --label "ForFabric" --so-pin 1234 --pin 98765432</li>
+                <li>ls</li>
+                <li>cd fabric</li>
+                <li>make gotools</li>
+                <li>cd ..</li>
+              </ol>
+
+              <!-- Binaries and dockers of Hyperledger Fabric Source -->
+              <h4>H. Install  Binaries & Docker Images of Hyperledger Fabric				</h4>
+              <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html" target="_blank" rel="noopener noreferrer">
+                Installation Instructions
+              </a>
+              <ol style="padding-top: 10px;">
+                <li>curl -sSL https://bit.ly/2ysbOFE | sudo bash -s</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Instructions Section -->
 
   </main><!-- End #main -->
 

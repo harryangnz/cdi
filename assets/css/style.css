@@ -442,7 +442,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
@@ -486,6 +486,12 @@ section {
   font-size: 28px;
   font-family: "Poppins", sans-serif;
 }
+.about .content h4 {
+  font-weight: 700;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  padding-top: 40px;
+}
 .about .content ul {
   list-style: none;
   padding: 0;
@@ -503,6 +509,13 @@ section {
 }
 .about .content p:last-child {
   margin-bottom: 0;
+}
+.about .content ol {
+  
+}
+.about .content ol li {
+  padding: 0 0 8px 15px;
+  position: relative;
 }
 
 /*--------------------------------------------------------------
@@ -1373,3 +1386,12 @@ a.anchor_contact {
   margin: auto;
   display: block;
   } 
+
+  /*--------------------------------------------------------------
+# Video
+--------------------------------------------------------------*/
+
+  .video-fluid {
+    width: 100%;
+    height: auto;
+  }
